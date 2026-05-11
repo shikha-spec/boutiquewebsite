@@ -3,7 +3,7 @@ name: CI Pipeline
 on:
   push:
     branches:
-      - main   # use master if your branch is master
+      - main
 
 jobs:
   test:
@@ -12,8 +12,18 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
+      - name: Install Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
       - name: Install dependencies
         run: npm install
 
-      - name: Run Selenium tests
+      - name: Install Chrome
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y google-chrome-stable
+
+      - name: Run selenium tests
         run: npm test
