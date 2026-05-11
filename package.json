@@ -18,5 +18,9 @@
   "bugs": {
     "url": "https://github.com/shikha-spec/boutiquewebsite/issues"
   },
-  "homepage": "https://github.com/shikha-spec/boutiquewebsite#readme"
+  "homepage": "https://github.com/shikha-spec/boutiquewebsite#readme",
+  "dependencies": {
+    "selenium": "^2.20.0",
+    "webdriver": "^9.27.1"
+  }
 }
